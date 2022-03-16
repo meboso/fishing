@@ -27,4 +27,14 @@ class RodController extends Controller
         $rod->fill($input)->save();
         return redirect('/rods/' . $rod->id);
 }
+    public function rod_edit(Rod $rod)
+{
+    return view('memos/rod_edit')->with(['rod' => $rod]);
+}
+   public function update(RodRequest $request, Rod $rod)
+{
+    $input_rod = $request['rod'];
+    $rod->fill($input_rod)->save();
+    return redirect('/rods/' . $rod->id);
+}
 }

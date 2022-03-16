@@ -8,13 +8,14 @@
     </head>
     <body>
         <h1>登録ロッド一覧</h1>
-        [<a href='/rods/rod_create'>新規登録</a>]
+        <h2>[<a href='/rods/rod_create'>新規登録</a>]</h2>
         <div class='rods'>
             @foreach ($rods as $rod)
             <div class='rod_lists'>
-                <h2 class='Name'>
-                    <a href="/rods/{{ $rod->id }}">{{ $rod->rod_name }}</a>
-                </h2>
+            <p class='rod_name'><a href="/rods/{{ $rod->id }}">{{ $rod->rod_name }}</a></p>
+            </div>
+            <div class="card-footer text-right">
+            　[<a href="/rods/{{ $rod->id }}/edit">編集</a>]
             </div>
             @endforeach
         </div>

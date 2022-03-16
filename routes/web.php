@@ -21,3 +21,8 @@ Route::get('/rods/{rod}', 'RodController@rod_show');
 //竿登録画面
 Route::get('/rods', 'RodController@store');
 Route::post('/rods', 'RodController@store');
+
+//竿一覧編集画面表示
+Route::get('/rods/{rod}/edit', 'RodController@rod_edit');
+//竿一覧編集実行
+Route::put('/rods/{rod}', 'RodController@update');

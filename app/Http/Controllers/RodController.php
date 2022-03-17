@@ -37,4 +37,9 @@ class RodController extends Controller
     $rod->fill($input_rod)->save();
     return redirect('/rods/' . $rod->id);
 }
+   public function delete(Rod $rod)
+{
+    $rod->delete();
+    return redirect('/');
+}
 }

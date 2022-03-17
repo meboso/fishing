@@ -16,11 +16,25 @@
             </div>
             <div class="card-footer text-right">
             　[<a href="/rods/{{ $rod->id }}/edit">編集</a>]
+            <form action="/rods/{{ $rod->id }}" id="form_delete" method="POST" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return deleteRod()">削除</button>
+            </form>
             </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{$rods->links()}}
         </div>
+        <script>
+            function deleteRod(){
+            'use stict';
+            if (window.confirm('削除すると復元できません。\n本当に削除しますか？'))
+            {
+                document.getElementById('form_delete').submit();
+            }
+            }
+        </script>
     </body>
 </html>

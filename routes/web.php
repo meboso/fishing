@@ -26,3 +26,6 @@ Route::post('/rods', 'RodController@store');
 Route::get('/rods/{rod}/edit', 'RodController@rod_edit');
 //竿一覧編集実行
 Route::put('/rods/{rod}', 'RodController@update');
+
+//竿削除処理
+Route::delete('/rods/{rod}', 'RodController@delete');

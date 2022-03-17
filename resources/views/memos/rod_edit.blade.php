@@ -5,14 +5,14 @@
     </head>
     <body>
             <h1>編集画面</h1>
-            <div class="body">
+    <div class="body">
         <form action="/rods/{{ $rod->id }}" method="POST">
             @csrf
             @method('PUT')
-              <div class='cantent_rod'>
+            <div class='cantent_rod'>
                 <input type='text' name='rod[rod_name]' value="{{ $rod->rod_name }}">
-              </div>
             </div>
+　　</div>
             <input type="submit" value="編集完了"/>
         </form>
         <div class="back">[<a href="/">戻る</a>]</div>

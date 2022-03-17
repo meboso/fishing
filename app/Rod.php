@@ -3,10 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+//論理削除の実装
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Rod extends Model
 
+
 {
+    use SoftDeletes;
     protected $fillable = [
         'rod_name'
          ];

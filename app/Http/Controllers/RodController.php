@@ -11,15 +11,15 @@ class RodController extends Controller
     //
     public function rod_lists(Rod $rod)
 {
-    return view('memos/rod_lists')->with(['rods' => $rod->getPaginateBylimit()]);
+    return view('rods/rod_lists')->with(['rods' => $rod->getPaginateBylimit()]);
 }
     public function rod_show(Rod $rod)
 {
-    return view('memos/rod_show')->with(['rod' => $rod]);
+    return view('rods/rod_show')->with(['rod' => $rod]);
 }
     public function rod_create()
 {
-    return view('memos/rod_create');
+    return view('rods/rod_create');
 }
     public function store(Rod $rod, RodRequest $request)
     {
@@ -29,7 +29,7 @@ class RodController extends Controller
 }
     public function rod_edit(Rod $rod)
 {
-    return view('memos/rod_edit')->with(['rod' => $rod]);
+    return view('rods/rod_edit')->with(['rod' => $rod]);
 }
    public function update(RodRequest $request, Rod $rod)
 {

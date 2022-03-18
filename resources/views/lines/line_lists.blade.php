@@ -7,31 +7,31 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>登録ロッド一覧</h1>
+        <h1>登録ライン一覧</h1>
         <a href="/rod">登録ロッド一覧</a>
         <a href="/reel">登録リール一覧</a>
         <a href="/line">登録ライン一覧</a>
-        <h2>[<a href='/rods/rod_create'>新規登録</a>]</h2>
-        <div class='rods'>
-            @foreach ($rods as $rod)
-            <div class='rod_lists'>
-            <p class='rod_name'><a href="/rods/{{ $rod->id }}">{{ $rod->rod_name }}</a></p>
+        <h2>[<a href='/lines/line_create'>新規登録</a>]</h2>
+        <div class='lines'>
+            @foreach ($lines as $line)
+            <div class='line_lists'>
+            <p class='line_name'><a href="/lines/{{ $line->id }}">{{ $line->main_lines }}{{ $line->leaders }}</a></p>
             </div>
             <div class="card-footer text-right">
-            　[<a href="/rods/{{ $rod->id }}/edit">編集</a>]
-            <form action="/rods/{{ $rod->id }}" id="form_delete" method="POST" style="display:inline">
+            　[<a href="/lines/{{ $line->id }}/edit">編集</a>]
+            <form action="/lines/{{ $line->id }}" id="form_delete" method="POST" style="display:inline">
             @csrf
             @method('DELETE')
-            <button type="submit" onclick="return deleteRod()">削除</button>
+            <button type="submit" onclick="return deleteReel()">削除</button>
             </form>
             </div>
             @endforeach
         </div>
         <div class='paginate'>
-            {{$rods->links()}}
+            {{$lines->links()}}
         </div>
         <script>
-            function deleteRod(){
+            function deleteLine(){
             'use stict';
             if (window.confirm('削除すると復元できません。\n本当に削除しますか？'))
             {

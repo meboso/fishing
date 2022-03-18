@@ -11,6 +11,25 @@
 |
 */
 
+//リール一覧画面
+Route::get('/', 'ReelController@rod_lists');
+
+
+Route::get('/reels/reel_create', 'ReelController@reel_create');
+Route::get('/reels/{reel}', 'ReelController@reel_show');
+
+//リール登録画面
+Route::get('/reels', 'ReelController@store');
+Route::post('/reels', 'ReelController@store');
+
+//リール一覧編集画面表示
+Route::get('/reels/{reel}/edit', 'ReelController@reel_edit');
+//リール一覧編集実行
+Route::put('/reels/{reel}', 'ReelController@update');
+
+//リール削除処理
+Route::delete('/reels/{reel}', 'ReelController@delete');
+
 //竿一覧画面
 Route::get('/', 'RodController@rod_lists');
 

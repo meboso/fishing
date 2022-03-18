@@ -2,44 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use App\Rod;
-use App\Http\Requests\RodRequest;
+use App\Reel;
+use App\Http\Requests\ReelRequest;
 
 
-class RodController extends Controller
+class ReelController extends Controller
 {
     //
-    public function rod_lists(Rod $rod)
+    public function reel_lists(Reel $reel)
 {
-    return view('rods/rod_lists')->with(['rods' => $rod->getPaginateBylimit()]);
+    return view('reels/reel_lists')->with(['reels' => $reel->getPaginateBylimit()]);
 }
-    public function rod_show(Rod $rod)
+    public function reel_show(Reel $reel)
 {
-    return view('rods/rod_show')->with(['rod' => $rod]);
+    return view('reels/reel_show')->with(['reel' => $reel]);
 }
-    public function rod_create()
+    public function reel_create()
 {
-    return view('rods/rod_create');
+    return view('reels/reel_create');
 }
-    public function store(Rod $rod, RodRequest $request)
+    public function store(Reel $reel, ReelRequest $request)
     {
-        $input = $request['rod'];
-        $rod->fill($input)->save();
-        return redirect('/rods/' . $rod->id);
+        $input = $request['reel'];
+        $reel->fill($input)->save();
+        return redirect('/reels/' . $reel->id);
 }
-    public function rod_edit(Rod $rod)
+    public function reel_edit(Reel $reel)
 {
-    return view('rods/rod_edit')->with(['rod' => $rod]);
+    return view('reels/reel_edit')->with(['reel' => $reel]);
 }
-   public function update(RodRequest $request, Rod $rod)
+   public function update(ReelRequest $request, Reel $reel)
 {
-    $input_rod = $request['rod'];
-    $rod->fill($input_rod)->save();
-    return redirect('/rods/' . $rod->id);
+    $input_reel = $request['reel'];
+    $reel->fill($input_reel)->save();
+    return redirect('/reels/' . $reel->id);
 }
-   public function delete(Rod $rod)
+   public function delete(Reel $reel)
 {
-    $rod->delete();
-    return redirect('/');
+    $reel->delete();
+    return redirect('/reel');
 }
 }

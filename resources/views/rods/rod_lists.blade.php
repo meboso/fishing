@@ -8,6 +8,8 @@
     </head>
     <body>
         <h1>登録ロッド一覧</h1>
+        <a href="/rod">登録ロッド一覧</a>
+        <a href="/reel">登録リール一覧</a>
         <h2>[<a href='/rods/rod_create'>新規登録</a>]</h2>
         <div class='rods'>
             @foreach ($rods as $rod)

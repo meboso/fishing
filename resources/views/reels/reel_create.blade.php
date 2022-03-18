@@ -13,6 +13,6 @@
             </div>
             <input type="submit" value="登録"/>
         </form>
-        <div class="back">[<a href="/">戻る</a>]</div>
+        <div class="back">[<a href="/reel">戻る</a>]</div>
     </body>
 </html>

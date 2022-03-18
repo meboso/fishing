@@ -9,7 +9,7 @@
     <body>
         <h1 class="reel_name">{{ $reel->reel_name }}</h1>
          <div class="footer">
-            <a href="/">一覧へ戻る</a>
+            <a href="/reel">一覧へ戻る</a>
         </div>
     </body>
 </html>

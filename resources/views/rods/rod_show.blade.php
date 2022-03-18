@@ -10,7 +10,7 @@
         <h1 class="rod_name">{{ $rod->rod_name }}</h1>
         
          <div class="footer">
-            <a href="/">一覧へ戻る</a>
+            <a href="/rod">一覧へ戻る</a>
         </div>
     </body>
 </html>

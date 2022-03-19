@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 //論理削除の実装
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Line extends Model
+class Mainline extends Model
 
 
 {
     use SoftDeletes;
     protected $fillable = [
         'main_lines',
-        'leaders'
          ];
     public function getByLimit(int $limit_count = 5)
 {

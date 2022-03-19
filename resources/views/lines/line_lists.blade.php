@@ -13,22 +13,22 @@
         <a href="/line">登録ライン一覧</a>
         <h2>[<a href='/lines/line_create'>新規登録</a>]</h2>
         <div class='lines'>
-            @foreach ($lines as $line)
+            @foreach ($mainlines as $mainline)
             <div class='line_lists'>
-            <p class='line_name'><a href="/lines/{{ $line->id }}">{{ $line->main_lines }}{{ $line->leaders }}</a></p>
+            <p class='line_name'><a href="/lines/{{ $mainline->id }}">{{ $mainline->main_lines }}</a></p>
             </div>
             <div class="card-footer text-right">
-            　[<a href="/lines/{{ $line->id }}/edit">編集</a>]
-            <form action="/lines/{{ $line->id }}" id="form_delete" method="POST" style="display:inline">
+            　[<a href="/lines/{{ $mainline->id }}/edit">編集</a>]
+            <form action="/lines/{{ $mainline->id }}" id="form_delete" method="POST" style="display:inline">
             @csrf
             @method('DELETE')
-            <button type="submit" onclick="return deleteReel()">削除</button>
+            <button type="submit" onclick="return deleteLine()">削除</button>
             </form>
             </div>
             @endforeach
         </div>
         <div class='paginate'>
-            {{$lines->links()}}
+            {{$mainlines->links()}}
         </div>
         <script>
             function deleteLine(){

@@ -8,8 +8,8 @@
         <form action="/lines" method="POST">
             @csrf
                 <h1>新規登録</h1>
-                <textarea name="line[main_lines]" placeholder="ライン名、メーカー、号数など"></textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('line.main_lines') }}</p>
+                <textarea name="mainline[main_lines]" placeholder="ライン名、メーカー、号数など"></textarea>
+                <p class="body__error" style="color:red">{{ $errors->first('mainline.main_lines') }}</p>
             </div>
             <input type="submit" value="登録"/>
         </form>

@@ -42,13 +42,13 @@ Route::delete('/reels/{reel}', 'ReelController@delete');
 //ライン一覧画面
 Route::get('/line', 'LineController@line_lists');
 Route::get('/lines/line_create', 'LineController@line_create');
-Route::get('/lines/{line}', 'LineController@line_show');
-//リール登録画面
+Route::get('/lines/{mainline}', 'LineController@line_show');
+//ライン登録画面
 Route::get('/lines', 'LineController@store');
 Route::post('/lines', 'LineController@store');
-//リール一覧編集画面表示
-Route::get('/lines/{line}/edit', 'LineController@line_edit');
-//リール一覧編集実行
-Route::put('/lines/{line}', 'LineController@update');
-//リール削除処理
-Route::delete('/lines/{line}', 'LineController@delete');
+//ライン一覧編集画面表示
+Route::get('/lines/{mainline}/edit', 'LineController@line_edit');
+//ライン一覧編集実行
+Route::put('/lines/{mainline}', 'LineController@update');
+//ライン削除処理
+Route::delete('/lines/{mainline}', 'LineController@delete');

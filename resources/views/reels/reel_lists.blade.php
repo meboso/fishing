@@ -10,6 +10,7 @@
         <h1>登録リール一覧</h1>
         <a href="/rod">登録ロッド一覧</a>
         <a href="/reel">登録リール一覧</a>
+        <a href="/line">登録ライン一覧</a>
         <h2>[<a href='/reels/reel_create'>新規登録</a>]</h2>
         <div class='reels'>
             @foreach ($reels as $reel)

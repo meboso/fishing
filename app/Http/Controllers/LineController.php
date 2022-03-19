@@ -2,44 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use App\Line;
-use App\Http\Requests\LineRequest;
+use App\Mainline;
+use App\Http\Requests\MainlineRequest;
 
 
 class LineController extends Controller
 {
     //
-    public function line_lists(Line $line)
+    public function line_lists(Mainline $mainline)
 {
-    return view('lines/line_lists')->with(['lines' => $line->getPaginateBylimit()]);
+    return view('lines/line_lists')->with(['mainlines' => $mainline->getPaginateBylimit()]);
 }
-    public function line_show(Line $line)
+    public function line_show(Mainline $mainline)
 {
-    return view('lines/line_show')->with(['line' => $line]);
+    return view('lines/line_show')->with(['mainline' => $mainline]);
 }
     public function line_create()
 {
     return view('lines/line_create');
 }
-    public function store(Line $line, LineRequest $request)
+    public function store(Mainline $mainline, MainlineRequest $request)
     {
-        $input = $request['line'];
-        $line->fill($input)->save();
-        return redirect('/lines/' . $line->id);
+        $input = $request['mainline'];
+        $mainline->fill($input)->save();
+        return redirect('/lines/' . $mainline->id);
 }
-    public function line_edit(Line $line)
+    public function line_edit(Mainline $mainline)
 {
-    return view('lines/line_edit')->with(['line' => $reel]);
+    return view('lines/line_edit')->with(['mainline' => $mainline]);
 }
-   public function update(LineRequest $request, Line $line)
+   public function update(MainlineRequest $request, Mainline $mainline)
 {
-    $input_line = $request['line'];
-    $line->fill($input_line)->save();
-    return redirect('/lines/' . $line->id);
+    $input_line = $request['mainline'];
+    $mainline->fill($input_line)->save();
+    return redirect('/lines/' . $mainline->id);
 }
-   public function delete(Line $line)
+   public function delete(Mainline $mainline)
 {
-    $line->delete();
+    $mainline->delete();
     return redirect('/line');
 }
 }

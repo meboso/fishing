@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LineRequest extends FormRequest
+class MainlineRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,8 +21,7 @@ class LineRequest extends FormRequest
     public function rules()
     {
         return [
-             'line.main_lines_' => 'required|string',
-             'line.leaders_' => 'required|string',
+             'mainline.main_lines' => 'required|string',
         ];
     }
 }

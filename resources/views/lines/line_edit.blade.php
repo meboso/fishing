@@ -6,15 +6,15 @@
     <body>
             <h1>編集画面</h1>
     <div class="body">
-        <form action="/reels/{{ $reel->id }}" method="POST">
+        <form action="/lines/{{ $mainline->id }}" method="POST">
             @csrf
             @method('PUT')
             <div class='cantent_reel'>
-                <input type='text' name='reel[reel_name]' value="{{ $reel->reel_name }}">
+                <input type='text' name='mainline[main_lines]' value="{{ $mainline->main_lines }}">
             </div>
 　　</div>
             <input type="submit" value="編集完了"/>
         </form>
-        <div class="back">[<a href="/reel">戻る</a>]</div>
+        <div class="back">[<a href="/line">戻る</a>]</div>
     </body>
 </html>

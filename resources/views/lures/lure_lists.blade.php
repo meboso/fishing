@@ -7,36 +7,36 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>登録ライン一覧</h1>
+        <h1>登録ルアー一覧</h1>
         <a href="/rods">登録ロッド一覧</a>
         <a href="/reel">登録リール一覧</a>
         <a href="/line">登録ライン一覧</a>
         <a href="/lures">登録ルアー一覧</a>
-        <h2>[<a href='/lines/line_create'>新規登録</a>]</h2>
-        <div class='lines'>
-            @foreach ($mainlines as $mainline)
-            <div class='line_lists'>
-            <p class='line_name'><a href="/lines/{{ $mainline->id }}">{{ $mainline->main_lines }}</a></p>
+        <h2>[<a href='/lures/lure_create'>新規登録</a>]</h2>
+        <div class='lures'>
+            @foreach ($lures as $lure)
+            <div class='lure_lists'>
+            <p class='lure_name'><a href="/lures/{{ $lure->id }}">{{ $lure->lure_name }}</a></p>
             </div>
             <div class="card-footer text-right">
-            　[<a href="/lines/{{ $mainline->id }}/edit">編集</a>]
-            <form action="/lines/{{ $mainline->id }}" id="form_delete" method="POST" style="display:inline">
+            　[<a href="/lures/{{ $lure->id }}/edit">編集</a>]
+            <form action="/lures/{{ $lure->id }}" id="form_delete" method="POST" style="display:inline">
             @csrf
             @method('DELETE')
             <input type="submit" style="display:none">
-            <span onclick="return deleteLine(this);">[削除]</span>
-　　　　　　</form>
+            <span onclick="return deleteLure(this);">[削除]</span>
+            </form>
             </div>
             @endforeach
         </div>
         <div class='paginate'>
-            {{$mainlines->links()}}
+            {{$lures->links()}}
         </div>
         <script>
-            function deleteLine(e){
+            function deleteLure(e){
             'use stict';
             if (window.confirm('削除すると復元できません。\n本当に削除しますか？'))
-            {
+           {
                 document.getElementById('form_delete').submit();
             }
             else{

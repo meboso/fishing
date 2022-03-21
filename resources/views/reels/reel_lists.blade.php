@@ -8,9 +8,10 @@
     </head>
     <body>
         <h1>登録リール一覧</h1>
-        <a href="/rod">登録ロッド一覧</a>
+        <a href="/rods">登録ロッド一覧</a>
         <a href="/reel">登録リール一覧</a>
         <a href="/line">登録ライン一覧</a>
+        <a href="/lures">登録ルアー一覧</a>
         <h2>[<a href='/reels/reel_create'>新規登録</a>]</h2>
         <div class='reels'>
             @foreach ($reels as $reel)
@@ -22,20 +23,24 @@
             <form action="/reels/{{ $reel->id }}" id="form_delete" method="POST" style="display:inline">
             @csrf
             @method('DELETE')
-            <button type="submit" onclick="return deleteReel()">削除</button>
+            <input type="submit" style="display:none">
+            <span onclick="return deleteReel(this);">[削除]</span>
             </form>
             </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{$reels->links()}}
-        </div>
+        </div>        
         <script>
-            function deleteReel(){
+            function deleteReel(e){
             'use stict';
-            if (window.confirm('削除すると復元できません。\n本当に削除しますか？'))
+            if (confirm('削除すると復元できません。\n本当に削除しますか？'))
             {
                 document.getElementById('form_delete').submit();
+            }
+            else{
+                alert("削除をキャンセルしました。")
             }
             }
         </script>

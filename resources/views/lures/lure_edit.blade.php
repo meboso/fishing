@@ -6,15 +6,15 @@
     <body>
             <h1>編集画面</h1>
     <div class="body">
-        <form action="/rods/{{ $rod->id }}" method="POST">
+        <form action="/lures/{{ $lure->id }}" method="POST">
             @csrf
             @method('PUT')
             <div class='cantent_rod'>
-                <input type='text' name='rod[rod_name]' value="{{ $rod->rod_name }}">
+                <input type='text' name='lure[lure_name]' value="{{ $lure->lure_name }}">
             </div>
 　　</div>
             <input type="submit" value="編集完了"/>
         </form>
-        <div class="back">[<a href="/rods">戻る</a>]</div>
+        <div class="back">[<a href="/lures">戻る</a>]</div>
     </body>
 </html>

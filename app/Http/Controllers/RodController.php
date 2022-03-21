@@ -40,6 +40,6 @@ class RodController extends Controller
    public function delete(Rod $rod)
 {
     $rod->delete();
-    return redirect('/');
+    return redirect('/rods');
 }
 }

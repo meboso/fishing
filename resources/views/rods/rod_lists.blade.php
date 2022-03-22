@@ -12,6 +12,7 @@
         <a href="/reel">登録リール一覧</a>
         <a href="/line">登録ライン一覧</a>
         <a href="/lures">登録ルアー一覧</a>
+        <a href="/mypages">マイページへ</a>
         <h2>[<a href='/rods/rod_create'>新規登録</a>]</h2>
         <div class='rods'>
             @foreach ($rods as $rod)

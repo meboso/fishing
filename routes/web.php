@@ -76,3 +76,7 @@ Route::get('/lures/{lure}/edit', 'LureController@lure_edit');
 Route::put('/lures/{lure}', 'LureController@update');
 //ルアー削除処理
 Route::delete('/lures/{lure}', 'LureController@delete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

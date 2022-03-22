@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+@extends('layouts.app')
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>釣果メモ</title>
 </head>
+@section('content')
 <body>
     <h1 class="user_name">マイページ</h1>
     <div class="user_info">
@@ -31,7 +33,9 @@
         
     </div>
 </body>
-
-
-
+@endsection
 </html>
+
+
+
+ 　　　　　　  　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　

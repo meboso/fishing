@@ -12,7 +12,7 @@
 */
 
 //マイページ画面
-Route::get('/mypages', 'MypageController@mypage');
+Route::get('/', 'MypageController@mypage')->middleware('auth');
 //プロフィール編集画面表示
 Route::get('/mypages/{mypage}/edit', 'MypageController@mp_edit');
 //プロフィール編集実行

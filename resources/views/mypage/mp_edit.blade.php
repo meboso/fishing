@@ -9,7 +9,7 @@
             <h1>プロフィール編集画面</h1>
     <div class="body">
        
-        <div class="back">[<a href="/mypages">戻る</a>]</div>
+        <div class="back">[<a href="/">戻る</a>]</div>
     </body>
     @endsection
 </html>

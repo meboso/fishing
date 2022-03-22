@@ -11,8 +11,12 @@
 |
 */
 
-
-
+//マイページ画面
+Route::get('/mypages', 'MypageController@mypage');
+//プロフィール編集画面表示
+Route::get('/mypages/{mypage}/edit', 'MypageController@mp_edit');
+//プロフィール編集実行
+Route::put('/mypages/{mypage}', 'MypageController@update');
 //竿一覧画面
 /*
 Route::get('/rods', 'RodController@rod_lists');

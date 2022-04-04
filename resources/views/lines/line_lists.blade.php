@@ -10,14 +10,13 @@
         <h1>登録ライン一覧</h1>
         <a href="/rods">登録ロッド一覧</a>
         <a href="/reel">登録リール一覧</a>
-        <a href="/line">登録ライン一覧</a>
         <a href="/lures">登録ルアー一覧</a>
         <a href="/">マイページへ</a>
         <h2>[<a href='/lines/line_create'>新規登録</a>]</h2>
         <div class='lines'>
             @foreach ($mainlines as $mainline)
             <div class='line_lists'>
-            <p class='line_name'><a href="/lines/{{ $mainline->id }}">{{ $mainline->main_lines }}</a></p>
+            <p class='line_name'><a href="/lines/{{ $mainline->id }}">{{ $mainline->main_line_name }}</a></p>
             </div>
             <div class="card-footer text-right">
             　[<a href="/lines/{{ $mainline->id }}/edit">編集</a>]

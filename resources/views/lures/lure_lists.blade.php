@@ -11,7 +11,6 @@
         <a href="/rods">登録ロッド一覧</a>
         <a href="/reel">登録リール一覧</a>
         <a href="/line">登録ライン一覧</a>
-        <a href="/lures">登録ルアー一覧</a>
         <a href="/">マイページへ</a>
         <h2>[<a href='/lures/lure_create'>新規登録</a>]</h2>
         <div class='lures'>

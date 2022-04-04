@@ -9,7 +9,6 @@
     <body>
         <h1>登録リール一覧</h1>
         <a href="/rods">登録ロッド一覧</a>
-        <a href="/reel">登録リール一覧</a>
         <a href="/line">登録ライン一覧</a>
         <a href="/lures">登録ルアー一覧</a>
         <a href="/">マイページへ</a>

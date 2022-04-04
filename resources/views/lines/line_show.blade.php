@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1 class="main_lines">{{ $mainline->main_lines }}</h1>
+        <h1 class="main_lines">{{ $mainline->main_line_name }}</h1>
          <div class="footer">
             <a href="/line">一覧へ戻る</a>
         </div>

@@ -10,9 +10,10 @@ class Mainline extends Model
 
 
 {
+    protected $table = 'main_lines';
     use SoftDeletes;
     protected $fillable = [
-        'main_lines',
+        'main_line_name',
          ];
     public function getByLimit(int $limit_count = 5)
 {
@@ -23,5 +24,9 @@ class Mainline extends Model
 {
     // updated_atで降順に並べたあと、limitで件数制限をかける
     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+}
+    public function posts()   
+{
+    return $this->hasMany('App\Post');  
 }
 }

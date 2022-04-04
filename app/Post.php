@@ -6,29 +6,41 @@ use Illuminate\Database\Eloquent\Model;
 //論理削除の実装
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Rod extends Model
-
-
+class Post extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'rod_name'
+        'fish',
+        'rod_id',
+        'reel_id',
+        'mainline_id',
+        'lure_id',
+        'image'
          ];
     public function getByLimit(int $limit_count = 5)
 {
     // updated_atで降順に並べたあと、limitで件数制限をかける
-    return $this->posts()->with('rod')->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
+    return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
 }
     public function getPaginateByLimit(int $limit_count = 5)
 {
     // updated_atで降順に並べたあと、limitで件数制限をかける
     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
 }
-    //Postに対するリレーション
-
-//「1対多」の関係なので'posts'と複数形に
-    public function posts()   
+    public function rod()
 {
-    return $this->hasMany('App\Post');  
+    return $this->belongsTo('App\Rod');
+}
+    public function reel()
+{
+    return $this->belongsTo('App\Reel');
+}
+    public function mainline()
+{
+    return $this->belongsTo('App\Mainline');
+}
+    public function lure()
+{
+    return $this->belongsTo('App\Lure');
 }
 }

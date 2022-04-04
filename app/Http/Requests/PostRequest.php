@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MainlineRequest extends FormRequest
+class PostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,7 +21,7 @@ class MainlineRequest extends FormRequest
     public function rules()
     {
         return [
-             'mainline.main_line_name' => 'required|string',
+             'post.fish' => 'required|string',
         ];
     }
 }

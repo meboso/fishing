@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <title>釣果メモ</title>
     </head>
     <body>
             <h1>編集画面</h1>
@@ -10,7 +11,7 @@
             @csrf
             @method('PUT')
             <div class='cantent_reel'>
-                <input type='text' name='mainline[main_lines]' value="{{ $mainline->main_lines }}">
+                <input type='text' name='mainline[main_lines]' value="{{ $mainline->main_line_name }}">
             </div>
 　　</div>
             <input type="submit" value="編集完了"/>

@@ -14,7 +14,7 @@ class AddLureIdToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('lure_id')->unsigned();
+            $table->integer('lure_id')->unsigned()->nullable();
         });
     }
 

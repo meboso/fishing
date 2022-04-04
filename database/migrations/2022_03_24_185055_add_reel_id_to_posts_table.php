@@ -14,7 +14,7 @@ class AddReelIdToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('reel_id')->unsigned();
+            $table->integer('reel_id')->unsigned()->nullable();
         });
     }
 

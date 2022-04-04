@@ -14,7 +14,7 @@ class AddRodIdToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('rod_id')->unsigned();
+            $table->integer('rod_id')->unsigned()->nullable();
         });
     }
 

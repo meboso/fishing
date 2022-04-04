@@ -14,7 +14,7 @@ class AddMainlineIdToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('mainline_id')->unsigned();
+            $table->integer('mainline_id')->unsigned()->nullable();
         });
     }
 

@@ -19,11 +19,8 @@ Route::get('/', 'GoogleLoginController@getGoogleAuth');
 Route::get('/login/callback', 'GoogleLoginController@authGoogleCallback');
 
 //マイページ画面
-Route::get('/', 'MypageController@mypage')->middleware('auth');
-//プロフィール編集画面表示
-Route::get('/mypages/{mypage}/edit', 'MypageController@mp_edit');
-//プロフィール編集実行
-Route::put('/mypages/{mypage}', 'MypageController@update');
+Route::group(['middleware' => ['auth']], function(){
+Route::get('/', 'MypageController@mypage');
 
 //ロッド
 Route::group(['prefix' => 'rods'], function() {
@@ -72,4 +69,4 @@ Route::post('/posts', 'PostController@store');
 Route::get('/posts/{post}/edit', 'PostController@edit');
 Route::put('/posts/{post}', 'PostController@update');
 Route::delete('/posts/{post}', 'PostController@delete');
-
+});
